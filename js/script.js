@@ -38,7 +38,7 @@ if (computerMove == 'ROCK' && playerMove == 'ROCK') {
 } else if (computerMove == 'PAPER' && playerMove == 'ROCK') {
     printMessage('I win!');
 } else if (computerMove == 'PAPER' && playerMove == 'PAPER') {
-    printMessage('I win!');
+    printMessage('DRAW!');
 } else if (computerMove == 'PAPER' && playerMove == 'SCISSORS') {
     printMessage('YOU win!');
 } else if (computerMove == 'SCISSORS' && playerMove == 'ROCK') {
