@@ -21,6 +21,10 @@ console.log('Player input: ' + playerInput);
 
 if (playerInput == '1') {
     playerMove = 'ROCK';
+} else if (playerInput == '2') {
+    playerMove = 'PAPER';
+} else if (playerInput == '3') {
+    playerMove = 'SCISSORS';
 }
 
 printMessage('Your move is: ' + playerMove);
