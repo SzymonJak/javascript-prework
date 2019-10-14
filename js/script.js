@@ -3,7 +3,7 @@ let playerMove = 'unknown move';
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-console.log('Wylosowana liczba to: ' + randomNumber);
+console.log('Random number is: ' + randomNumber);
 
 if (randomNumber == 1) {
     computerMove = 'ROCK';
@@ -28,6 +28,28 @@ if (playerInput == '1') {
 }
 
 printMessage('Your move is: ' + playerMove);
+
+if (computerMove == 'ROCK' && playerMove == 'ROCK') {
+    printMessage('DRAW!');
+} else if (computerMove == 'ROCK' && playerMove == 'PAPER') {
+    printMessage('YOU win!');
+} else if (computerMove == 'ROCK' && playerMove == 'SCISSORS') {
+    printMessage('I win!');
+} else if (computerMove == 'PAPER' && playerMove == 'ROCK') {
+    printMessage('I win!');
+} else if (computerMove == 'PAPER' && playerMove == 'PAPER') {
+    printMessage('I win!');
+} else if (computerMove == 'PAPER' && playerMove == 'SCISSORS') {
+    printMessage('YOU win!');
+} else if (computerMove == 'SCISSORS' && playerMove == 'ROCK') {
+    printMessage('YOU win!');
+} else if (computerMove == 'SCISSORS' && playerMove == 'PAPER') {
+    printMessage('I win!');
+} else if (computerMove == 'SCISSORS' && playerMove == 'SCISSORS') {
+    printMessage('DRAW!');
+} else {
+    printMessage('you picked WRONG number');
+}
 
 
 
