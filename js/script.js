@@ -1,53 +1,54 @@
-let computerMove = 'unknown move';
-let playerMove = 'unknown move';
+function getMoveName(argMoveId) {
+    if (argMoveId == 1) {
+        return 'ROCK';
+    } else if (argMoveId == 2) {
+        return 'PAPER';
+    } else if (argMoveId == 3) {
+        return 'SCISSORS';
+    } else {
+        printMessage('I don\'t the move by the id of ' + argMoveId + '.');
+        return 'unknown move';
+    }
+}
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
+let argComputerMove = getMoveName(randomNumber);
+
 console.log('Random number is: ' + randomNumber);
 
-if (randomNumber == 1) {
-    computerMove = 'ROCK';
-} else if (randomNumber == 2) {
-    computerMove = 'PAPER';
-} else if (randomNumber == 3) {
-    computerMove = 'SCISSORS';
-}
-
-printMessage('My move is: ' + computerMove);
+printMessage('My move is: ' + argComputerMove);
 
 let playerInput = prompt('Pick you move! 1: ROCK, 2: PAPER, 3: SCISSORS');
 
+let argPlayerMove = getMoveName(playerInput);
+
 console.log('Player input: ' + playerInput);
 
-if (playerInput == '1') {
-    playerMove = 'ROCK';
-} else if (playerInput == '2') {
-    playerMove = 'PAPER';
-} else if (playerInput == '3') {
-    playerMove = 'SCISSORS';
+printMessage('Your move is: ' + argPlayerMove);
+
+function displayResult(argComputerMove, argPlayerMove) {
+    console.log('move: ', argComputerMove, argPlayerMove);
+    if (argComputerMove == 'ROCK' && argPlayerMove == 'PAPER') {
+        printMessage('YOU win!');
+    } else if (argComputerMove == 'ROCK' && argPlayerMove == 'SCISSORS') {
+        printMessage('I win!');
+    } else if (argComputerMove == 'PAPER' && argPlayerMove == 'ROCK') {
+        printMessage('I win!');
+    } else if (argComputerMove == 'PAPER' && argPlayerMove == 'SCISSORS') {
+        printMessage('YOU win!');
+    } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'ROCK') {
+        printMessage('YOU win!');
+    } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'PAPER') {
+        printMessage('I win!');
+    } else if (argComputerMove == argPlayerMove) {
+        printMessage('DRAW!');
+    } else {
+        printMessage('you picked WRONG number');
+    }
 }
 
-printMessage('Your move is: ' + playerMove);
-
-if (computerMove == 'ROCK' && playerMove == 'PAPER') {
-    printMessage('YOU win!');
-} else if (computerMove == 'ROCK' && playerMove == 'SCISSORS') {
-    printMessage('I win!');
-} else if (computerMove == 'PAPER' && playerMove == 'ROCK') {
-    printMessage('I win!');
-} else if (computerMove == 'PAPER' && playerMove == 'SCISSORS') {
-    printMessage('YOU win!');
-} else if (computerMove == 'SCISSORS' && playerMove == 'ROCK') {
-    printMessage('YOU win!');
-} else if (computerMove == 'SCISSORS' && playerMove == 'PAPER') {
-    printMessage('I win!');
-} else if (computerMove == playerMove) {
-    printMessage('DRAW!');
-} else {
-    printMessage('you picked WRONG number');
-}
-
-
+displayResult(argComputerMove, argPlayerMove);
 
 //  Step By Step
 
