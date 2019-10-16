@@ -68,18 +68,3 @@ paperButton.addEventListener('click', function() {
 scissorsButton.addEventListener('click', function() {
     playGame(3);
 });
-
-//  Step By Step
-
-// let randomFraction = Math.random();
-// printMessage('Random fraction is: ' + randomFraction)
-
-// let calculation = randomFraction * 3 + 1;
-// printMessage('Fraction multiplied by 3 and appended by 1: ' + calculation);
-
-// let roundNumber = Math.floor(calculation);
-// printMessage('Number rounded down is: ' + roundNumber);
-
-// Random in a range
-// let testRandom = Math.floor(Math.random() * ((19 - 11) + 1) + 11);
-// printMessage('random within 11-19 range: ' + testRandom);
