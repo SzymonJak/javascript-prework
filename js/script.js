@@ -9,10 +9,9 @@ function playGame(playerInput) {
             return 'PAPER';
         } else if (argMoveId == 3) {
             return 'SCISSORS';
-        } else {
-            printMessage('I don\'t the move by the id of ' + argMoveId + '.');
-            return 'unknown move';
         }
+        printMessage('I don\'t the move by the id of ' + argMoveId + '.');
+        return 'unknown move';
     }
 
     let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -52,7 +51,32 @@ function playGame(playerInput) {
         }
     }
 
+    let compScore = 0;
+    let playerScore = 0;
+
+    function score(argComputerMove, argPlayerMove) {
+        if (argComputerMove == 'ROCK' && argPlayerMove == 'PAPER') {
+            playerScore++;
+        } else if (argComputerMove == 'ROCK' && argPlayerMove == 'SCISSORS') {
+            compScore++;
+        } else if (argComputerMove == 'PAPER' && argPlayerMove == 'ROCK') {
+             compScore++;
+        } else if (argComputerMove == 'PAPER' && argPlayerMove == 'SCISSORS') {
+             playerScore++;
+        } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'ROCK') {
+             playerScore++;
+        } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'PAPER') {
+             compScore++;
+        } else if (argComputerMove == argPlayerMove) {
+            printResult('nothing');
+        } else {
+            printMessage('you picked WRONG number');
+        }
+    }
+
     displayResult(argComputerMove, argPlayerMove);
+    printResult('comp: ' + compScore + ' - ' + playerScore);
+    score(argComputerMove, argPlayerMove);
 }
 
 let rockButton = document.getElementById('play-rock');
@@ -68,3 +92,4 @@ paperButton.addEventListener('click', function() {
 scissorsButton.addEventListener('click', function() {
     playGame(3);
 });
+
