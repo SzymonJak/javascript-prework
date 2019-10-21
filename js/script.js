@@ -1,3 +1,10 @@
+'use strict';
+
+{
+
+let compScore = 0;
+let playerScore = 0;
+
 function playGame(playerInput) {
 
     clearMessages();
@@ -31,46 +38,27 @@ function playGame(playerInput) {
     printMessage('Your move is: ' + argPlayerMove);
 
     function displayResult(argComputerMove, argPlayerMove) {
-        console.log('move: ', argComputerMove, argPlayerMove);
+        
         if (argComputerMove == 'ROCK' && argPlayerMove == 'PAPER') {
             printMessage('YOU win!');
-        } else if (argComputerMove == 'ROCK' && argPlayerMove == 'SCISSORS') {
-            printMessage('I win!');
-        } else if (argComputerMove == 'PAPER' && argPlayerMove == 'ROCK') {
-            printMessage('I win!');
-        } else if (argComputerMove == 'PAPER' && argPlayerMove == 'SCISSORS') {
-            printMessage('YOU win!');
-        } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'ROCK') {
-            printMessage('YOU win!');
-        } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'PAPER') {
-            printMessage('I win!');
-        } else if (argComputerMove == argPlayerMove) {
-            printMessage('DRAW!');
-        } else {
-            printMessage('you picked WRONG number');
-        }
-    }
-
-    function score(argComputerMove, argPlayerMove) {
-
-        let compScore = 0;
-        let playerScore = 0;
-
-        if (argComputerMove == 'ROCK' && argPlayerMove == 'PAPER') {
             playerScore++;
-            console.log(playerScore);
         } else if (argComputerMove == 'ROCK' && argPlayerMove == 'SCISSORS') {
+            printMessage('I win!');
             compScore++;
         } else if (argComputerMove == 'PAPER' && argPlayerMove == 'ROCK') {
-             compScore++;
+            printMessage('I win!');
+            compScore++;
         } else if (argComputerMove == 'PAPER' && argPlayerMove == 'SCISSORS') {
-             playerScore++;
+            printMessage('YOU win!');
+            playerScore++;
         } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'ROCK') {
-             playerScore++;
+            printMessage('YOU win!');
+            playerScore++;
         } else if (argComputerMove == 'SCISSORS' && argPlayerMove == 'PAPER') {
-             compScore++;
+            printMessage('I win!');
+            compScore++;
         } else if (argComputerMove == argPlayerMove) {
-            printResult('nothing');
+            printMessage('DRAW!');
         } else {
             printMessage('you picked WRONG number');
         }
@@ -79,7 +67,6 @@ function playGame(playerInput) {
     }
 
     displayResult(argComputerMove, argPlayerMove);
-    score(argComputerMove, argPlayerMove);
 }
 
 let rockButton = document.getElementById('play-rock');
@@ -95,3 +82,5 @@ paperButton.addEventListener('click', function() {
 scissorsButton.addEventListener('click', function() {
     playGame(3);
 });
+
+}
