@@ -51,12 +51,14 @@ function playGame(playerInput) {
         }
     }
 
-    let compScore = 0;
-    let playerScore = 0;
-
     function score(argComputerMove, argPlayerMove) {
+
+        let compScore = 0;
+        let playerScore = 0;
+
         if (argComputerMove == 'ROCK' && argPlayerMove == 'PAPER') {
             playerScore++;
+            console.log(playerScore);
         } else if (argComputerMove == 'ROCK' && argPlayerMove == 'SCISSORS') {
             compScore++;
         } else if (argComputerMove == 'PAPER' && argPlayerMove == 'ROCK') {
@@ -72,10 +74,11 @@ function playGame(playerInput) {
         } else {
             printMessage('you picked WRONG number');
         }
+
+        printResult('comp: ' + compScore + ' - ' + playerScore);
     }
 
     displayResult(argComputerMove, argPlayerMove);
-    printResult('comp: ' + compScore + ' - ' + playerScore);
     score(argComputerMove, argPlayerMove);
 }
 
@@ -92,4 +95,3 @@ paperButton.addEventListener('click', function() {
 scissorsButton.addEventListener('click', function() {
     playGame(3);
 });
-
