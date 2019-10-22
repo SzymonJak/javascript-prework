@@ -5,7 +5,7 @@
     let compScore = 0;
     let playerScore = 0;
 
-    let playGame = function(playerInput) {
+    const playGame = function(playerInput) {
 
         clearMessages();
 
@@ -21,21 +21,21 @@
             return 'unknown move';
         }
 
-        let randomNumber = Math.floor(Math.random() * 3 + 1);
+        const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-        let argComputerMove = getMoveName(randomNumber);
+        const argComputerMove = getMoveName(randomNumber);
 
         console.log('Random number is: ' + randomNumber);
 
         printMessage('My move is: ' + argComputerMove);
 
-        let argPlayerMove = getMoveName(playerInput);
+        const argPlayerMove = getMoveName(playerInput);
 
         console.log('Player input: ' + playerInput);
 
         printMessage('Your move is: ' + argPlayerMove);
 
-        let displayResult = function(argComputerMove, argPlayerMove) {
+        const displayResult = function(argComputerMove, argPlayerMove) {
             
             if (argComputerMove == 'ROCK' && argPlayerMove == 'PAPER') {
                 printMessage('YOU win!');
@@ -63,7 +63,7 @@
         }
 
         displayResult(argComputerMove, argPlayerMove);
-        printResult('comp: ' + compScore + ' - ' + playerScore);
+        printResult('comp: ' + compScore + ' - player: ' + playerScore);
     }
 
     const rockButton = document.getElementById('play-rock'),
